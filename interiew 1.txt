@@ -1,0 +1,19 @@
+model brand bool isAvailable 4 cars
+
+var cars = [ {model: "cx-5",  brand: "Mazda", isAvailable: true}
+			,{model: "diablo", brand: "Lamborghini" isAvailable: false}
+			,{model: "fusion", brand: "Ford", isAvailable: true}
+			,{model: "focus", brand: "Ford", isAvailable: true}
+			]
+			
+function findCar (acarAr)
+{
+for (let index =0; acarAr.length; index++)
+{
+
+	let car = acarAr[index]
+	
+	
+console.log(car.brand)
+}
+}

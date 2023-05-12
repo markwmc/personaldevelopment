@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form id="teamForm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <h2>Teams</h2>
+              <label for="entitiesTeamName"><strong>Name</strong></label>
+              <input
+                type="name"
+                class="form-control"
+                id="entitiesTeamName"
+                aria-describedby="teamNameHelp"
+                placeholder="Example: Lakers"
+              />
+            </div>
+            <div class="form-group">
+              <label for="teamInputCity"><strong>City</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="teamInputCity"
+                placeholder="Example: LA"
+              />
+            </div>
+            <div class="form-group">
+              <label for="teamInputSport"><strong>Sport</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="teamInputSport"
+                placeholder="Example: 4"
+              />
+            </div>
+            <label for="teamImageURL"><strong>Image URL</strong></label>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="teamImageURL"
+                aria-describedby="basic-addon3"
+              />
+            </div>
+            <button type="button" class="btn btn-danger" id="clear">
+              Clear
+            </button>
+            <span
+              ><button type="submit" class="btn btn-primary" id="submit">
+                Submit
+              </button></span
+            >
+            <div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                style="margin-top: 50px"
+                id="renderAll"
+              >
+                Render All
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="container teams">
+      <div class="row"></div>
+    </div>
+    <div type="text/template" id="template">
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="..." alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+
+          <p class="card-text">insert Teams Card here</p>
+          <p class="card-text-second"></p>
+        </div>
+      </div>
+    </div>
+    <script id="entitiesForm">
+      function startUp() {
+        console.log("EntitiesForm startUp is firing...");
+        writeFormData();
+      }
+
+      function getFormData() {
+        var data = {};
+        data.teamName = $("#entitiesTeamName").val();
+        data.teamCity = $("#teamInputCity").val();
+        data.teamSport = $("#teamInputSport").val();
+        data.teamImageURL = $("#teamImageURL").val();
+        return data;
+      }
+
+      function writeFormData(formData) {
+        if (!formData) {
+          return;
+        }
+        $("#entitiesTeamName").val(formData.teamName);
+        $("#teamInputCity").val(formData.teamCity);
+        $("#teamInputSport").val(formData.teamSport);
+        $("#teamImageURL").val(formData.teamImageURL);
+      }
+    </script>
+  </body>
+</html>

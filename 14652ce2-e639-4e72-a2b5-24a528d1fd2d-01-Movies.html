@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Assessment - Movies From Arrays</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://pw.sabio.la/api/js/specs/assessments/60d325baA8/assessment-091A.js"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style></style>
+  </head>
+
+  <body
+    class="sabio"
+    data-ins="pw-assessments-60d325ba8A-assessment_1A"
+    data-ins-css="false"
+  >
+    <div class="alert alert-danger text-start assesment-not-load" role="alert">
+      <p>
+        If you are still seeing this, you assessment has not loaded correctly.
+        Once you see this message disappear and the instructions loaded below
+        you will know you are on your way.
+      </p>
+    </div>
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"
+    ></nav>
+
+    <div class="container workspace">
+      <div>
+        <button id="showMovies" type="submit" class="btn btn-info ml-3 mb-5">
+          Show movies
+        </button>
+        <button
+          id="emptyMovies"
+          type="button"
+          class="btn btn-secondary ml-5 mb-5"
+        >
+          Empty Movies
+        </button>
+      </div>
+
+      <div class="row">
+        <!-- Cloned Templates go inside the element below !! -->
+        <div class="col-md-5 clone-container"></div>
+      </div>
+    </div>
+    <script id="movieTemplate" type="text/template">
+      <div class="row my-3 t-3 card-movie ">
+          <div class="col-md-12 mb-4">
+              <div class="card border-0 shadow">
+                  <img src="https://i.pravatar.cc/400?img=48" class="card-img-top" alt="...">
+                  <div class="card-body text-center">
+                      <h5 class="card-title mb-0">Title in Template</h5>
+                      <div class="card-genre text-black-50">Genre in Template</div>
+                      <div class="card-year text-black-50">Year in Template</div>
+                      <button type="button" class="btn btn-danger deleteMovie mt-2">Delete</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </script>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      //create a declared function called startUp that registers the wireHandlers function once the DOM is ready
+      function startUp() {
+        wireHandlers(); //invoke the wireHandlers function
+      }
+
+      // create a declared function called getMovies with no parameters, and an array of 5 objects with 5 properties.
+      function getMovies() {
+        return [
+          {
+            id: 1,
+            title: "Tree of Life",
+            genre: "Indy",
+            year: 2011,
+            mainImage:
+              "https://en.wikipedia.org/wiki/The_Tree_of_Life_(film)#/media/File:Thetreeoflifeposter.jpg",
+          },
+          {
+            id: 2,
+            title: "Spotlight",
+            genre: "American Biographical Drama",
+            year: 2015,
+            mainImage:
+              "https://www.imdb.com/title/tt1895587/mediaviewer/rm899739136/?ref_=tt_ov_i",
+          },
+          {
+            id: 3,
+            title: "Mad Max: Fury Road",
+            genre: "Action",
+            year: 2015,
+            mainImage:
+              "https://www.imdb.com/title/tt1392190/mediaviewer/rm3064749568/?ref_=tt_ov_i",
+          },
+          {
+            id: 4,
+            title: "Black Panther",
+            genre: "Action",
+            year: 2018,
+            mainImage:
+              "https://en.wikipedia.org/wiki/Black_Panther_(film)#/media/File:Black_Panther_(film)_poster.jpg",
+          },
+          {
+            id: 5,
+            title: "Ex Machina",
+            genre: "Science Fiction",
+            year: 2015,
+            mainImage:
+              "https://en.wikipedia.org/wiki/Ex_Machina_(film)#/media/File:Ex-machina-uk-poster.jpg",
+          },
+        ];
+      }
+
+      // create a declared function called wireHandlers that contains all the event handlers
+      function wireHandlers() {
+        $("#showMovies").on("click", onShowMovies); // call the onShowMovies function on the click event of button with id showMovies
+        $("#emptyMovies").on("click", emptyAllMovies); //call the emptyAllMovies function on click event of button with id emptyMovies
+        $(".clone-container").on("click", ".t-3", onDeleteMovie); //call the onDeleteMovie function on click event of button with id deleteMovie
+      }
+      // (".clone-container");
+      // create a declared function called onShowMovies that is invoked on showMovies button click event
+      function onShowMovies(e) {
+        console.log("on click");
+        e.preventDefault(); //prevent the default behavior of the submit type function of the button
+        let movies = getMovies(); //invoke the function getMovies and store the array the function returns into a local variable called movies
+        console.log(movies); // log movies to the console
+        renderMovies(movies); //invoke the function renderMovies and pass the array movies argument
+      }
+
+      // create a declared function called getTemplate
+      function getTemplate() {
+        let htmlFromCloneTarget = $("#movieTemplate").html();
+
+        let jQ = $(htmlFromCloneTarget);
+        return jQ; // return the html from the template provided and return it as a jQuery object
+      }
+
+      function renderMovies(moviesArr) {
+        //console.log("render moviesArr", moviesArr);
+
+        for (let index = 0; index < moviesArr.length; index++) {
+          const currentMovie = moviesArr[index];
+          console.log(currentMovie);
+          let container = $(".clone-container");
+          const template = getTemplate().show();
+
+          template.find("h5.card-title.mb-0").val($(moviesArr.title));
+          template.find("div.card-genre.text-black-50").text(moviesArr.genre);
+          template.find("div.card-year.text-black-50").text(moviesArr.year);
+          template.find("img.card-img-top").attr("src", moviesArr.mainImage);
+
+          //console.log(currentMovie, index)
+
+          container.append(template);
+        }
+      }
+
+      function getMovieClone() {
+        const template = getTemplate();
+        return template;
+      }
+
+      // create a declared function emptyAllMovies that should remove all of the templates without removing the element with class clone-container
+      function emptyAllMovies() {
+        console.log("click empty");
+        $(".clone-container").empty(); //.empty() removes all child nodes of the set of matched elements from the DOM
+      }
+
+      // create a declared function onDeleteMovie that should remove the card that had the delete button clicked
+      function onDeleteMovie() {
+        console.log("click delete");
+        this.remove();
+        //.remove())) //.remove() removes the selected element and its child elements
+      }
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

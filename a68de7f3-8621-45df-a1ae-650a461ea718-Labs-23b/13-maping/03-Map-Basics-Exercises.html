@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Mapping Basics Exercises</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://pw.sabio.la/api/js/specs/Mapping/mappingBasics.js"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+      footer {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body
+    class="sabio"
+    data-ins="pw-labs-mapBasics"
+    data-ins-css="false"
+    data-ui="full-height"
+  >
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"
+    ></nav>
+    <main
+      role="main"
+      class="graph-container align-middle d-flex justify-content-center"
+      style="height: 100%"
+      id="objGraph"
+    ></main>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      getNumberAr = () => {
+        return [23, 65, 34, 76, 233];
+      };
+      numbers = getNumberAr();
+
+      //var addZeros = (nums) => {
+      //   var zeros = nums.map(mapZeros);
+      //   return zeros;
+      //   function mapZeros(numbAr) {
+      //     let result = "000" + numbAr;
+      //     return result;
+      //   }
+      // };
+      // zerosAdded = addZeros(numbers);
+
+      var addZeros = function (nums) {
+        return nums.map((num) => `000${num}`);
+      };
+      //zerosAdded = addZeros(numbers);
+
+      getPeople = () => {
+        return [
+          { id: 5, name: "paul" },
+          { id: 5, name: "paul" },
+          { id: 5, name: "paul" },
+        ];
+      };
+
+      var companyPeople = getPeople();
+
+      var getNames = function (peopleAr) {
+        var result = peopleAr.map(mapFunct);
+        function mapFunct(onePeople) {
+          return onePeople.name;
+        }
+        return result;
+      };
+
+      var potato = getNames(companyPeople);
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

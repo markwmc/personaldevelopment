@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Entities - Service</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <script src="https://pw.sabio.la/api/js/specs/Entities/01_entities_service.tests.js"></script>
+    <script src="entitiesService.js"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+      /* .container.teams {
+        display: none;
+      } */
+      .card-img-top {
+        padding: 30px;
+      }
+      .card-text {
+        margin-bottom: 1px;
+      }
+      .btn-group {
+        padding: 20px;
+      }
+    </style>
+  </head>
+
+  <body
+    class="sabio"
+    data-ins="pw-labs--entities-01_entities_service"
+    data-ins-css="false"
+  >
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"
+    ></nav>
+
+    <!-- Write your HTML below this line -->
+
+    <form id="" class="teamForm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <h2>Teams</h2>
+            <div class="form-group d-none">
+              <label for="teamId"><strong>Team Id</strong></label>
+              <input
+                type="name"
+                class="form-control"
+                id="teamId"
+                aria-describedby="teamNameHelp"
+                placeholder="Example: 123645"
+                name="teamId"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="entitiesTeamName"><strong>Name</strong></label>
+              <input
+                type="name"
+                class="form-control"
+                id="entitiesTeamName"
+                aria-describedby="teamNameHelp"
+                placeholder="Example: Lakers"
+                name="teamName"
+              />
+            </div>
+            <div class="form-group">
+              <label for="teamInputCity"><strong>City</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="teamInputCity"
+                placeholder="Example: LA"
+                name="teamCity"
+              />
+            </div>
+            <div class="form-group">
+              <label for="teamInputSport"><strong>Sport</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="teamInputSport"
+                placeholder="Example: 4"
+                name="teamSport"
+              />
+            </div>
+            <label for="teamImageURL"><strong>Image URL</strong></label>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="teamImageURL"
+                aria-describedby="basic-addon3"
+                name="ImageURL"
+              />
+            </div>
+            <button type="reset" class="btn btn-danger" id="clear">
+              Clear
+            </button>
+            <span>
+              <button type="submit" class="btn btn-primary" id="submit">
+                Submit
+              </button></span
+            >
+            <div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                style="margin-top: 50px"
+                id="renderAll"
+              >
+                Render All
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="container teams">
+      <div class="row">
+        <div class="col">
+          <script type="text/htmlFromCloneTarget" id="htmlFromCloneTarget">
+            <div class="card text-center" id="" style="width: 18rem">
+              <img class="card-img-top" src="..." alt="Card image top" />
+              <div class="card-body">
+                <h5 class="card-title"></h5>
+                <p class="card-text">insert Teams Card here</p>
+                <p class="card-text-second"></p>
+              </div>
+              <div
+                class="btn-group"
+                role="group"
+                aria-label="Basic example"
+                id="targetButtonGroup"
+              >
+                <button type="button" class="btn btn-danger" id="deleteCard">
+                  Delete
+                </button>
+                <button type="button" class="btn btn-info" id="editCard">
+                  Edit
+                </button>
+              </div>
+            </div>
+          </script>
+        </div>
+      </div>
+    </div>
+    <div class="container newTeams">
+      <div class="row"></div>
+    </div>
+    <!-- Write your HTML above this line -->
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2022</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      function startUp() {
+        console.log("startUp is firing...");
+        wireUpHandlers();
+      }
+
+      function wireUpHandlers() {
+        console.log("Wire Handler Firing");
+        $("#clear").on("click", onClearFormClicked);
+        $("#submit").on("click", onSubmitFormClicked);
+        $("#renderAll").on("click", onRenderAllClicked);
+        //event listeners
+        $(".container.newTeams .row").on("click", "#editCard", onEditClicked);
+        $(".container.newTeams .row").on(
+          "click",
+          "#deleteCard",
+          onDeleteClicked
+        );
+      }
+      function onDeleteClicked(e) {
+        e.preventDefault();
+        var thisItem = $(this).closest(".card"); //.closest("parent class")
+        //console log thisCard value
+        console.log(thisItem);
+        var thisCard = thisItem.attr("id");
+        // console.log(thisCard);
+        console.log("onDeleteClicked", thisCard);
+        //if success handler is defined here, you can use remove on $(this)
+        onDeleteEntitySuccess = (response) => {
+          //if this definition is in the click handler, you can access the jQery for removal
+          console.log({ entities: response }, "onDeleteEntitySuccess");
+          thisItem.remove();
+        };
+        entitiesService
+          .deleteById(thisCard)
+          .then(onDeleteEntitySuccess)
+          .catch(onDeleteEntityError);
+      }
+
+      function onEditClicked(e) {
+        e.preventDefault();
+        var thisItem = $(this).closest(".card"); //.closest("parent class")
+        var thisCard = thisItem.attr("id");
+        console.log(thisCard, "this Card");
+        console.log("onEditClicked");
+        var editCard = {
+          teamName: thisItem.find(".card-title").text(),
+          teamCity: thisItem.find(".card-text").text(),
+          teamSport: thisItem.find(".card-text-second").text(),
+          teamImageURL: thisItem.find(".card-img-top").attr("src"),
+          id: thisCard,
+        };
+
+        writeFormData(editCard);
+      }
+
+      function onRenderAllClicked(e) {
+        e.preventDefault();
+
+        if (".card" === true) {
+          return;
+        }
+
+        console.log("onRenderAll");
+        entitiesService
+          .getAll()
+          .then(onGetAllEntitySuccess)
+          .catch(onGetAllEntityError);
+      }
+
+      function onSubmitFormClicked(e) {
+        e.preventDefault();
+        console.log("onSubmitForm");
+        var newFormData = getFormData();
+        //if statment need condition newFormData.id {run the update request} else the add
+        if (newFormData.id) {
+          entitiesService
+            .update(newFormData.id, newFormData)
+            .then(onUpdateEntitySuccess)
+            .catch(onUpdateEntityError); // this will happen naturally after a render all from the updated database
+          //here you are favored for using the update service function //can re-render on .then
+          //update needs 2 arguments newFormData.id newFormData
+        } else {
+          entitiesService
+            .add(newFormData)
+            .then(onAddEntitySuccess)
+            .catch(onAddEntityError);
+        }
+      }
+
+      var onUpdateEntitySuccess = (response) => {
+        console.log($(`#${response.id}`));
+        var targetCard = $(`#${response.id}`);
+        targetCard.find(".card-title").text(response.teamName);
+        targetCard.find(".card-text").text(response.teamCity);
+        targetCard.find(".card-text-second").text(response.teamSport);
+        targetCard.find(".card-img-top").text(response.teamImageURL);
+      };
+      function getFormData() {
+        var data = {};
+        data.teamName = $("#entitiesTeamName").val();
+        data.teamCity = $("#teamInputCity").val();
+        data.teamSport = $("#teamInputSport").val();
+        data.teamImageURL = $("#teamImageURL").val();
+        data.id = $("#teamId").val();
+        return data;
+      }
+
+      function onClearFormClicked(e) {
+        console.log("onClearForm is executing");
+      }
+
+      function writeFormData(formData) {
+        if (!formData) {
+          return;
+        }
+        $("#entitiesTeamName").val(formData.teamName);
+        $("#teamInputCity").val(formData.teamCity);
+        $("#teamInputSport").val(formData.teamSport);
+        $("#teamImageURL").val(formData.teamImageURL);
+        $("#teamId").val(formData.id);
+        //create a form field for the team id give class of d-none
+      }
+
+      function getTemplate(templateId) {
+        templateId = templateId || "#htmlFromCloneTarget";
+        console.log("getTemplate is firing...");
+        let htmlFromCloneTarget = $(templateId).html();
+        JQ = $(htmlFromCloneTarget).clone(true);
+        JQ.removeAttr("id");
+        return JQ;
+      }
+
+      function renderTeams(teams) {
+        console.log("renderTeams is firing...", teams);
+        for (let index = 0; index < teams.length; index++) {
+          const currentTeam = teams[index];
+          console.log(currentTeam, "CurrentTeam");
+          newTeam(currentTeam);
+        }
+      }
+      function newTeam(currentTeam) {
+        let container = $(".container.newTeams .row");
+        let newTemplate = getTemplate();
+
+        newTemplate.find(".card-img-top").attr("src", currentTeam.teamImageURL);
+        newTemplate.find(".card-text").text(currentTeam.teamCity);
+        newTemplate.find(".card-title").text(currentTeam.teamName);
+        newTemplate.find(".card-text-second").text(currentTeam.teamSport);
+        newTemplate.attr("id", currentTeam.id);
+        container.append(newTemplate);
+      }
+
+      // function processArrayByMapping(teams){
+      // function mapTeam(currentTeam){
+      // newTemplate.find(".card-img-top").attr("src", currentTeam.teamImageURL);
+      // newTemplate.find(".card-text").text(currentTeam.teamCity);
+      // newTemplate.find(".card-title").text(currentTeam.teamName);
+      // newTemplate.find(".card-text-second").text(currentTeam.teamSport);
+      // newTemplate.attr("id", currentTeam.id);
+      //}
+      //let arrayOfJqTemplates = teams.map(mapTeam;
+      //$(".container.newTeams .row").append(arrayOfJqTemplates))
+      //}
+
+      onUpdateEntityError = (response) => {
+        console.error({ error: response }, "onUpdateEntityError");
+      };
+      onAddEntitySuccess = (response) => {
+        console.log({ entities: response }, "onAddEntitySuccess");
+        newTeam(response);
+      };
+
+      onAddEntityError = (response) => {
+        console.error({ error: response }, "onAddEntityError");
+      };
+
+      onDeleteEntityError = (response) => {
+        console.error({ error: response }, "onDeleteEntityError");
+      };
+
+      onGetAllEntitySuccess = (response) => {
+        $(".container.newTeams .row").empty();
+        console.log({ entities: response.data.items }, "onGetAllEntitySuccess");
+        renderTeams(response.data.items);
+      };
+
+      onGetAllEntityError = (response) => {
+        console.error({ error: response }, "onGetAllEntityError");
+      };
+      onGetByIdEntityError = (response) => {
+        console.error({ error: response }, "onGetByIdEntityError");
+      };
+
+      onGetByIdEntitySuccess = (response) => {
+        console.log({ entities: response }), "onGetByIdEntitySuccess";
+      };
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "firstName": "Mark",
+  "lastName": "McClallen",
+  "email": "mark.mcclallen1@gmail.com",
+  "password": "P@sSw0rd!23",
+  "passwordConfirm": "P@sSw0rd!23",
+  "avatarUrl": "https://avatars.slack-edge.com/2023-01-16/4651581532499_a3c72042a92d4920316e_192.png",
+  "tenantId": "U04K510BV5H"
+}
+{
+ "email": "mark.mcclallen1@gmail.com",
+ "password": "P@sSw0rd!23",
+ "tenantId": "U04K510BV5H"
+}
+
+{
+ "id": 28203,
+  "item": 0,
+  "isSuccessful": true,
+  "transactionId": "string"
+}
+
+interview question #32
+whats the difference between an ajax request and axios call?
+  nothing, underneath they both make ajax request.
+
+interview question #39
+how do i know if something bad or good happens inside of my promises/function?
+	if the original request returns something in the 200s, then .then() will fire. otherwise, the catch will fire.
+	
+	
+	
+	
+	
+	entitiesService
+            .getById(newFormData)
+            .then(onGetByIdEntitySuccess)
+            .catch(onGetByIdEntityError);
+			
+		Add a Form element to the page.
+Add at least 1 form field and form field label to the Form
+Make sure the form renders well and is not stuck to the default side of the page.
+Add the remaining fields to the form.
+Ensure all fields have a class name or Id attribute so that I can select it via JavaScript
+Add a Button to the form
+Wire up a click handler to the button and make sure the button click fires this function
+Create a function that reads from data
+When the Button is clicked, the click handler calls the function that reads the form data
+Create an ajax function that hits the POST endpoint (post since we are adding) and test this function works with hardcoded data
+Make the Ajax function work with the dynamic data (data from the form)
+Show the user some feedback about the operation succeeded or not.
+
+
+https://www.youtube.com/watch?v=UZjQk-8LCUw
+https://www.youtube.com/watch?v=CZ4HpLw7Hqk

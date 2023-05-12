@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>PW Execise Template</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="JQStarterTasksService.js"></script>
+    <link rel="stylesheet" href="app.css" />
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+      #registerButton {
+        margin-top: 10px;
+        margin-left: 270px;
+      }
+    </style>
+  </head>
+
+  <body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"
+    ></nav>
+    <nav
+      class="jq-starter-tasks navbar navbar-expand-md navbar-dark bg-dark"
+      aria-label="Fourth navbar example"
+    >
+      <div class="container-fluid">
+        <a href="./login.html"
+          ><button id="navLogin" type="button" class="btn btn-success">
+            Login Here
+          </button></a
+        >
+
+        <!-- <a href="./register.html"
+          ><button id="navRegister" type="button" class="btn btn-info">
+            Register Here
+          </button></a
+        > -->
+
+        <a class="navbar-brand" href="#"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <!-- <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li> -->
+            <!-- <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./friends.html"
+                >Friends</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./techCompanies.html"
+                >Tech Companies</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./events.html"
+                >Events</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./jobs.html"
+                >Jobs</a
+              >
+            </li>
+          </ul> -->
+          <form>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!-- Write your HTML below this line -->
+    <div class="container ajax sabio d-none"></div>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <form id="" class="jqStarterTasksForm">
+      <div class="container">
+        <div class="mx-auto col-10 col-md-8 col-lg-6">
+          <h2>Register Here</h2>
+          <div class="form-group">
+            <div class="form-row">
+              <div class="row">
+                <div class="col">
+                  <label for="registerFirstName"
+                    ><strong>First Name</strong></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="registerFirstName"
+                    placeholder="First name"
+                    id="registerFirstName"
+                  />
+                </div>
+                <div class="col">
+                  <label for="registerLastName"
+                    ><strong>Last Name</strong></label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="registerLastName"
+                    placeholder="Last name"
+                    id="registerLastName"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="registerEmail"><strong>Email</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="registerEmail"
+                aria-describedby="registerEmailHelp"
+                placeholder="Your email"
+                name="registerEmail"
+              />
+            </div>
+            <div class="row">
+              <div class="col-md-6">
+                <label for="registerPassword"><strong>Password</strong></label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="registerPassword"
+                  aria-describedby="registerPasswordHelp"
+                  placeholder="Clever Password"
+                  name="registerPassword"
+                />
+              </div>
+              <div class="col-md-6">
+                <label for="PasswordConfirm"
+                  ><strong>Password Confirm</strong></label
+                >
+                <input
+                  type="password"
+                  class="form-control"
+                  id="PasswordConfirm"
+                  aria-describedby="ConfirmPasswordHelp"
+                  placeholder="Confirm Password"
+                  name="PasswordConfirm"
+                />
+              </div>
+            </div>
+            <div class="col-md-12">
+              <label for="registerAvatarUrl"><strong>Avatar Url</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="registerAvatarUrl"
+                aria-describedby="registerAvatarUrlHelp"
+                placeholder="Your Avatar URL"
+                name="registerAvatarUrl"
+              />
+            </div>
+            <div class="col-md-6 d-none">
+              <label for="registerTenantId"><strong>TenantId</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="registerTenantId"
+                aria-describedby="registerTenantIdHelp"
+                placeholder="Your TenantId"
+                name="registerTenantId"
+                value="U04K510BV5H"
+              />
+            </div>
+            <div>
+              <button id="registerButton" type="button" class="btn btn-primary">
+                REGISTER
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <!-- Write your HTML above this line -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      function startUp() {
+        console.log("startUp is firing...");
+        wireUpHandlers();
+        // var testRegisterUser = {
+        //   fName: "Patrick",
+        //   lName: "Star",
+        //   email: "user@example.com",
+        //   password: "patrickrulz123",
+        //   passwordConfirm: "patrickrulz123",
+        //   avatarUrl:
+        //     "https://media.giphy.com/media/ZXB0mnbPeOGEYjJmNC/giphy.gif",
+        //   tenantId: "983475",
+        // };
+      }
+
+      function wireUpHandlers() {
+        console.log("wireUpHandler Firing...");
+        $("#registerButton").on("click", onRegisterClicked);
+        $("#login").on("click", onNavLoginClicked);
+        $("#navRegister").on("click", onNavRegisterClicked);
+      }
+
+      function onNavRegisterClicked(e) {
+        e.preventDefault();
+        console.log("onNavRegisterClicked is firing...");
+      }
+
+      function onNavLoginClicked(e) {
+        e.preventDefault();
+        console.log("onNavLoginClicked is firing...");
+      }
+      function onRegisterClicked(e) {
+        e.preventDefault();
+        console.log("onRegisterClicked is firing...");
+        var newFormData = getFormData();
+        if (!newFormData) {
+          return;
+        }
+        JQStarterTasksService.registerUser(newFormData)
+          .then(onRegisterUserSuccess)
+          .catch(onRegisterUserError);
+      }
+
+      function writeFormData(formData) {
+        console.log("writeFormData is firing...");
+        if (!formData) {
+          return;
+        }
+
+        $("#registerFirstName").val(formData.userFirstName);
+        $("#registerLastName").val(formData.userLastName);
+        $("#registerEmail").val(formData.userEmail);
+        $("#registerPassword").val(formData.userPassword);
+        $("#PasswordConfirm").val(formData.userPasswordConfirm);
+        $("#registerAvatarUrl").val(formData.userAvatarURL);
+        $("#registerTenantId").val(formData.TenantId);
+      }
+
+      function getFormData() {
+        console.log("getFormData is firing...");
+        var data = {};
+        data.FirstName = $("#registerFirstName").val();
+        data.LastName = $("#registerLastName").val();
+        data.email = $("#registerEmail").val();
+        data.password = $("#registerPassword").val();
+        data.passwordConfirm = $("#PasswordConfirm").val();
+        data.avatarUrl = $("#registerAvatarUrl").val();
+        data.TenantId = $("#registerTenantId").val();
+        return data;
+      }
+
+      onRegisterUserSuccess = (response) => {
+        console.log(response, "OnRegisterUserSuccess");
+        toastr.info("Registration success");
+        $("#btnReset").click();
+        window.location.href = "./login.html";
+      };
+      onRegisterUserError = (response) => {
+        console.error(response, "OnRegisterUserError");
+        toastr.warning("Registration error");
+      };
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

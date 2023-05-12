@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>newEntities</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <script src="entitiesService.js"></script>
+  </head>
+  <body>
+    <form id="teamForm">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="form-group">
+              <h2>Teams</h2>
+              <label for="entitiesTeamName"><strong>Name</strong></label>
+              <input
+                type="name"
+                class="form-control"
+                id="entitiesTeamName"
+                aria-describedby="teamNameHelp"
+                placeholder="Example: Lakers"
+              />
+            </div>
+            <div class="form-group">
+              <label for="teamInputCity"><strong>City</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="teamInputCity"
+                placeholder="Example: LA"
+              />
+            </div>
+            <div class="form-group">
+              <label for="teamInputSport"><strong>Sport</strong></label>
+              <input
+                type="text"
+                class="form-control"
+                id="teamInputSport"
+                placeholder="Example: 4"
+              />
+            </div>
+            <label for="teamImageURL"><strong>Image URL</strong></label>
+            <div class="input-group mb-3">
+              <input
+                type="text"
+                class="form-control"
+                id="teamImageURL"
+                aria-describedby="basic-addon3"
+              />
+            </div>
+            <button type="button" class="btn btn-danger" id="clear">
+              Clear
+            </button>
+            <span
+              ><button type="submit" class="btn btn-primary" id="submit">
+                Submit
+              </button></span
+            >
+            <div>
+              <button
+                type="button"
+                class="btn btn-secondary"
+                style="margin-top: 50px"
+                id="renderAll"
+              >
+                Render All
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+    <div class="container teams">
+      <div class="row"></div>
+    </div>
+    <div>
+      type="text/template" id="template">
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="..." alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+
+          <p class="card-text">insert Teams Card here</p>
+          <p class="card-text-second"></p>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script>
+      function startUp() {
+        console.log("startUp is firing...");
+        // writeFormData();
+        wireUpHandlers();
+      }
+
+      function wireUpHandlers() {
+        console.log("Wire Handler Firing");
+        $("#clear").on("click", onClearFormClicked);
+        $("#submit").on("click", onSubmitFormClicked);
+        $("#renderAll").on("click", onRenderAllClicked);
+        $("#edit").on("click", onEditClicked);
+        $("#delete").on("click", onDeleteClicked);
+      }
+
+      function onRenderAllClicked(e) {
+        e.preventDefault();
+        console.log("onRenderAll");
+        var btnCommand = $(this);
+        var renderTeam = btnCommand.entitiesService
+          .getAll()
+          .then(onGetAllEntitySuccess)
+          .catch(onGetAllEntityError);
+      }
+
+      function onSubmitFormClicked(e) {
+        e.preventDefault();
+        console.log("onSubmitForm");
+        var btnCommand = $(this);
+        var submitTeam = btnCommand.entitiesService
+          .add()
+          .then(onAddEntitySuccess)
+          .catch(onAddEntityError);
+      }
+
+      function onClearFormClicked(e) {
+        e.preventDefault();
+        console.log("onClearForm");
+        var btnCommand = $(this);
+        //  var clearForm = ${"#teamForm"}.reset()
+      }
+      function getFormData() {
+        var data = {};
+        data.teamName = $("#entitiesTeamName").val();
+        data.teamCity = $("#teamInputCity").val();
+        data.teamSport = $("#teamInputSport").val();
+        data.teamImageURL = $("#teamImageURL").val();
+        return data;
+      }
+
+      function writeFormData(formData) {
+        if (!formData) {
+          return;
+        }
+        $("#entitiesTeamName").val(formData.teamName);
+        $("#teamInputCity").val(formData.teamCity);
+        $("#teamInputSport").val(formData.teamSport);
+        $("#teamImageURL").val(formData.teamImageURL);
+
+        let template = $("#template").html();
+        jQ = $(template).clone();
+        return jQ;
+
+        renderTeams = (teams) => {
+          console.log("renderTeams is firing...");
+          let container = $(".container.teams .row");
+          for (let index = 0; index < teams.length; index++) {
+            const currentTeam = team[index];
+            console.log(currentTeam, "CurrentTeam");
+
+            let newTemplate = getTemplate();
+            newTemplate
+              .find(".card-img-top")
+              .attr("src", currentTeam.picture.large);
+            newTemplate.find(".card-text").text(currentTeam.name.value);
+            newTemplate.find(".card-title").text(`${currentTeam.name.title} `);
+            newTemplate
+              .find(".card-text-second")
+              .text(`${currentTeam.city} ${currentTeam.Sport}`);
+            container.append(newTemplate);
+          }
+        };
+
+        // entitiesService
+        //     .update()
+        //     .then(onUpdateEntitySuccess)
+        //     .catch(onUpdateEntityError);
+
+        //   entitiesService
+        //     .delete()
+        //     .then(onDeleteEntitySuccess)
+        //     .catch(onDeleteEntityError);
+      }
+      onUpdateEntitySuccess = (response) => {
+        console.log({ entities: response.data.items }, "onUpdateEntitySuccess");
+      };
+
+      onUpdateEntityError = (response) => {
+        console.error({ error: response }, "onUpdateEntityError");
+      };
+      onAddEntitySuccess = (response) => {
+        console.log({ entities: response.data.items }, "onAddEntitySuccess");
+      };
+
+      onAddEntityError = (response) => {
+        console.error({ error: response }, "onAddEntityError");
+      };
+
+      onDeleteEntitySuccess = (response) => {
+        console.log({ entities: response.data.items }, "onDeleteEntitySuccess");
+      };
+      onDeleteEntityError = (response) => {
+        console.error({ error: response }, "onDeleteEntityError");
+      };
+
+      onGetAllEntitySuccess = (response) => {
+        console.log({ entities: response.data.items }, "onGetAllEntitySuccess");
+      };
+
+      onGetAllEntityError = (response) => {
+        console.error({ error: response }, "onGetAllEntityError");
+      };
+
+      function onSelectItem(e) {
+        e.preventDefault();
+        var currentTarget = e.currentTarget;
+        var target = e.target;
+        var orginalEvent = e.originalEvent;
+      }
+
+      function onCloneRequested(e) {
+        e.preventDefault();
+        console.log("onClick is firing...");
+      }
+    </script>
+  </body>
+</html>

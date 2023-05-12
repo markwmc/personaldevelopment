@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Assessment - Theaters From Arrays</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://pw.sabio.la/api/js/specs/assessments/87Ao3t8n3kA/theaters_assessment46f2.js"></script>
+    <style>
+      .movie-posters img {
+        /* max-height: 240px; */
+        max-width: 160px;
+      }
+
+      .card-theater .card-body span {
+        font-weight: bold;
+      }
+    </style>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style></style>
+  </head>
+
+  <body
+    class="sabio"
+    data-ins="pw-assessments-d522ca10-assessment_85c7"
+    data-ins-css="false"
+  >
+    <div class="alert alert-danger text-left assesment-not-load" role="alert">
+      <p>
+        If you are still seeing this, you assessment has not loaded correctly.
+        Once you see this message disappear and the instructions loaded below
+        you will know you are on your way.
+      </p>
+    </div>
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"
+    ></nav>
+
+    <div class="container workspace">
+      <!-- EXAMPLE -->
+      <div class="row">
+        <h5>
+          This is an example of what the items should render as. This is 1 item.
+        </h5>
+        <div class="card mb-3 card-theater col-md-6 leave-this-card-here">
+          <div class="row movie-posters">
+            <img
+              class="img-thumbnail rounded mx-auto d-block float-end first-image"
+              src="https://cdn.shopify.com/s/files/1/1523/1900/products/il_570xN.1539428715_eou8_300x300.jpg?v=1571496988"
+              alt="Movie 1"
+            />
+
+            <img
+              class="img-thumbnail rounded mx-auto d-block float-end second-image"
+              src="https://images-na.ssl-images-amazon.com/images/I/81iAypxHkeL._AC_SL1324_.jpg"
+              alt="Movie 2"
+            />
+
+            <img
+              class="img-thumbnail rounded mx-auto d-block float-end thrid-image"
+              src="https://ae01.alicdn.com/kf/HTB16DoWCwaTBuNjSszfq6xgfpXaM/Jurassic-Park-Movie-Posters-Vintage-Style-Wall-Stickers-Kraft-Paper-Prints-wall-sticker-Home-Decoration-A4.jpg_q50.jpg"
+              alt="Movie 3"
+            />
+          </div>
+          <div class="row no-gutters">
+            <div class="col-md-12">
+              <div class="card-body theater-body">
+                <h5 class="card-title pt-3 pb-2 card-name">
+                  Sabio Downtown LA
+                </h5>
+                <p class="address">
+                  777 S Alameda Street,Los Angeles, CA 90021
+                </p>
+                <p>
+                  Is Open
+                  <span class="is-open">true</span>
+                </p>
+                <p>In Business Since <span class="in-business">2013</span></p>
+              </div>
+              <div class="card-footer">
+                <button type="button" class="btn btn-danger deleteItem mt-2">
+                  Delete
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <button id="showItems" type="submit" class="btn btn-info ml-3 mb-5">
+          Show Items
+        </button>
+        <button
+          id="emptyItems"
+          type="button"
+          class="btn btn-secondary ml-5 mb-5"
+        >
+          Empty Items
+        </button>
+      </div>
+
+      <!-- Cloned Templates go inside the element below !! -->
+      <div class="row pb-5 col-md-12 clone-container"></div>
+    </div>
+
+    <script id="itemTemplate" type="text/template">
+      <div class="card mb-3 card-theater col-md-6">
+          <div class="row movie-posters">
+
+                  <img class="img-thumbnail rounded mx-auto d-block float-end  first-image"
+                      src="https://via.placeholder.com/150x230?text=Use+Real+Image+Please"
+                      alt="Movie 1">
+
+                  <img class="img-thumbnail rounded mx-auto d-block float-end  second-image"
+                      src="https://via.placeholder.com/150x230?text=Use+Real+Image+Please"
+                      alt="Movie 2">
+
+                  <img class="img-thumbnail rounded mx-auto d-block float-end  third-image"
+                      src="https://via.placeholder.com/150x230?text=Use+Real+Image+Please"
+                      alt="Movie 3">
+
+
+          </div>
+          <div class="row no-gutters">
+              <div class="col-md-12">
+                  <div class="card-body theater-body ">
+                      <h5 class="card-title pt-3 pb-2 card-name">Sabio Downtown LA</h5>
+                      <p class="address">777 S Alameda Street,Los Angeles, CA 90021</p>
+                      <p>
+                          Is Open
+                          <span class="is-open">true</span>
+
+                      </p>
+                      <p>In Business Since <span class="in-business">2013</span></p>
+                  </div>
+                  <div class="card-footer">
+                      <button type="button" class="btn btn-danger deleteItem mt-2">Delete</button>
+                  </div>
+              </div>
+          </div>
+      </div>
+    </script>
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      function startUp() {
+        wireUpHandlers();
+      }
+
+      function wireUpHandlers() {
+        $("button#showItems").on("click", onShowItems);
+        $("button#emptyItems").on("click", onEmptyAllItems);
+        $(".clone-container").on("click", ".card-theater", onDeleteItem);
+      }
+
+      function onDeleteItem() {
+        console.log("click delete");
+        $(this).remove();
+      }
+      function onEmptyAllItems() {
+        console.log("click empty");
+        $(".card-theater").empty();
+      }
+
+      function onShowItems(e) {
+        console.log("click show");
+        e.preventDefault();
+        let theaters = getTheaters();
+        console.log(theaters);
+        renderItems(theaters);
+      }
+      function renderItems(itemsArray) {
+        // console.log("render items executing");
+        // console.log("render items array", itemsArray);
+        // console.log("array 2", itemsArray[1]);
+        for (let index = 0; index < itemsArray.length; index++) {
+          const currentItem = itemsArray[index];
+
+          let container = $(".clone-container");
+          let newTemplate = getTemplate().show();
+
+          newTemplate
+            .find("h5.card-title.pt-3.pb-2.card-name")
+            .text(currentItem.name);
+          newTemplate.find(".address").text(currentItem.address);
+          newTemplate.find(".is-open").text(currentItem.isOpen);
+          newTemplate.find(".in-business").text(currentItem.openSince);
+          newTemplate.find(".first-image").attr("src", currentItem.imageOne);
+          newTemplate.find(".second-image").attr("src", currentItem.imageTwo);
+          newTemplate.find(".third-image").attr("src", currentItem.imageThree);
+
+          container.append(newTemplate);
+          // console.log(currentItem);
+        }
+      }
+
+      function getTheaters() {
+        return [
+          {
+            id: 235,
+            name: "AMC 1",
+            address: "123 Main",
+            imageOne:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_gMRf9QRTh0rKtYuqMzVHVLXg7UItdZlEYSh1SSsoC0BgsZ_V",
+            imageTwo:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_M4acUvpvg3K7Ey-aQL_f8lmNwhvkRnZvChITjK5QtOPGSD57",
+            imageThree:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTjy9vA2kOHTz5O6dGBnbARTs6qVkBkaCZz5LJNy_VJNz0UVEC7",
+
+            openSince: 2010,
+            isOpen: true,
+          },
+          {
+            id: 236,
+            name: "AMC 2",
+            address: "124 Main",
+            imageOne:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_gMRf9QRTh0rKtYuqMzVHVLXg7UItdZlEYSh1SSsoC0BgsZ_V",
+            imageTwo:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_M4acUvpvg3K7Ey-aQL_f8lmNwhvkRnZvChITjK5QtOPGSD57",
+            imageThree:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTjy9vA2kOHTz5O6dGBnbARTs6qVkBkaCZz5LJNy_VJNz0UVEC7",
+            openSince: 2019,
+            isOpen: true,
+          },
+          {
+            id: 237,
+            name: "AMC 3",
+            address: "183 Main",
+            imageOne:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_gMRf9QRTh0rKtYuqMzVHVLXg7UItdZlEYSh1SSsoC0BgsZ_V",
+            imageTwo:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_M4acUvpvg3K7Ey-aQL_f8lmNwhvkRnZvChITjK5QtOPGSD57",
+            imageThree:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTjy9vA2kOHTz5O6dGBnbARTs6qVkBkaCZz5LJNy_VJNz0UVEC7",
+            openSince: 2020,
+            isOpen: false,
+          },
+          {
+            id: 238,
+            name: "AMC 4",
+            address: "153 Main",
+            imageOne:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_gMRf9QRTh0rKtYuqMzVHVLXg7UItdZlEYSh1SSsoC0BgsZ_V",
+            imageTwo:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_M4acUvpvg3K7Ey-aQL_f8lmNwhvkRnZvChITjK5QtOPGSD57",
+            imageThree:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTjy9vA2kOHTz5O6dGBnbARTs6qVkBkaCZz5LJNy_VJNz0UVEC7",
+            openSince: 2015,
+            isOpen: true,
+          },
+          {
+            id: 239,
+            name: "AMC 5",
+            address: "103 Main",
+            imageOne:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_gMRf9QRTh0rKtYuqMzVHVLXg7UItdZlEYSh1SSsoC0BgsZ_V",
+            imageTwo:
+              "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcT_M4acUvpvg3K7Ey-aQL_f8lmNwhvkRnZvChITjK5QtOPGSD57",
+            imageThree:
+              "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTjy9vA2kOHTz5O6dGBnbARTs6qVkBkaCZz5LJNy_VJNz0UVEC7",
+            openSince: 1956,
+            isOpen: true,
+          },
+        ];
+
+        console.log(getTheaters);
+      }
+
+      function getTemplate() {
+        let templatehtml = $("#itemTemplate").html();
+        let jQ = $(templatehtml).clone();
+        return jQ;
+      }
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Objects & Primitives</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style></style>
+  </head>
+
+  <body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"
+    ></nav>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻-->
+    <script id="candidateCode">
+      var person = {}; //object literal
+      var spongebob = {
+        fName: "sponge",
+        lName: "Bob",
+        age: 25,
+        isSabioStaff: true,
+      };
+
+      var company = { name: "Sabio", age: 10 };
+      spongebob.employer = company;
+      person.employer = company;
+
+      // declare name = (assign a value of patrick)
+      let firstName = "Patrick"; //string
+      let lastName = "star"; //string
+      let myAge = 25;
+      let isStaff = true;
+
+      //unique key:Value pairs
+
+      //called name:value pairs but inaccurate
+      person.fName = firstName;
+      person.lName = lastName;
+      person.age = myAge;
+      person.isSabioStaff = isStaff;
+
+      spongebob.isCEO = true;
+
+      console.log(firstName);
+      console.log(myAge);
+      console.log(isStaff);
+      console.log(person);
+      console.log(spongebob);
+
+      //syntatically correct function
+      function logSomething() {
+        console.log("I am a message");
+
+        return "OK";
+      }
+
+      spongebob.log = logSomething;
+
+      var logResult = spongebob.log();
+
+      function getName() {
+        console.log("getName is running...");
+        return "Sabio"; //retun ALWAYS EXITS THE FUNCTION
+
+        console.log("getName after the return..."); // WILL NOT GET RAN
+      }
+
+      function getPerson() {
+        return { fName: "Sandy", isSabioStaff: true };
+      }
+
+      function getCEO() {
+        return spongebob;
+      }
+
+      var aName = getName();
+      // var sandy = {}; same as below
+      var sandy = getPerson();
+      var ceo = getCEO();
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

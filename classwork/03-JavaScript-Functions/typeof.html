@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>PW Execise Template</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style></style>
+  </head>
+
+  <body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"
+    ></nav>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      var firstName = "patrick";
+      var age = 25;
+      var pat = new Person();
+
+      logType(firstName);
+      logType(age);
+      logType(Person);
+      logType(car);
+      logType({});
+
+      logType(pat);
+      logType([]);
+
+      // constructor function capital P
+      function Person() {}
+
+      var car = function () {};
+
+      // This function is too vague, it will only return the object, and may not be enough information
+      // for what you are looking for
+      //   function logType(thisParam) {
+      //     var thisType = typeof thisParam;
+
+      //     console.log(thisType);
+      //   }
+      //this function logs whether the object is also an array, otherwise, logs object
+      function logType(thisParam) {
+        var thisType = typeof thisParam;
+
+        if (thisType === "object" && Array.isArray(thisParam)) {
+          console.log("This is an array");
+        } else {
+          console.log(thisType);
+        }
+
+        console.log(thisType);
+      }
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta name="referrer" content="unsafe-url" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>Filtering Basics Exercises</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://pw.sabio.la/api/js/specs/Filtering/filteringBasics.js"></script>
+
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style>
+      footer {
+        display: none;
+      }
+    </style>
+  </head>
+
+  <body
+    class="sabio"
+    data-ins-css="false"
+    data-ins="pw-labs-filterBasics"
+    data-ui="full-height"
+  >
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio"
+    ></nav>
+
+    <main
+      role="main"
+      class="graph-container align-middle d-flex justify-content-center"
+      style="height: 100%"
+      id="objGraph"
+    ></main>
+
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      var getAges = () => {
+        return [23, 51, 43, 23, 67, 15, 137, 90, 78, 73];
+      };
+      ages = getAges();
+      //filter all 18>=
+      var getAdults = (peopleAges) => {
+        var internalAges = peopleAges.filter(filterAge);
+        return internalAges;
+
+        function filterAge(age) {
+          let result = age >= 18;
+          return result;
+        }
+      };
+
+      var filteredAdultAges = getAdults(ages);
+
+      var getNames = () => {
+        return [
+          "John Smith",
+          "Judy Carter",
+          "Jennier Pulaski",
+          "Jack London",
+          "Jessica Putriascki",
+          "Jericka Dostyovski",
+          "Jodie Applebaum",
+          "John Garbinza",
+          "Jaques Custardo Napolean de la Puero-Rossa",
+          "Jim Bob",
+        ];
+      };
+
+      let fullNames = getNames();
+
+      var searchFirstNames = (namesAr, nameQuery) => {
+        var internalNames = namesAr.filter(filterName);
+        return internalNames;
+
+        function filterName(name) {
+          let result = false;
+          let splitName = name.split(" ");
+          let firstName = splitName[0];
+          let lastName = splitName[1];
+
+          if (firstName == nameQuery) {
+            result = true;
+            return result;
+          }
+          return result;
+        }
+      };
+
+      var callName = searchFirstNames(fullNames, "John");
+
+      var getEmployees = () => {
+        return [
+          { name: "asdf", id: "", department: "Sales" },
+          { name: "fdsa", id: "", department: "HR" },
+          { name: ";lkj", id: "", department: "Engineering" },
+          { name: "jk;", id: "", department: "IT" },
+          { name: "piuyewr", id: "", department: "Sales" },
+        ];
+      };
+      var employees = getEmployees();
+      var searchByDepartment = (employeeAr, department) => {
+        var internalEmps = employeeAr.filter(filterEmp);
+        return internalEmps;
+
+        function filterEmp(emp) {
+          let result = false;
+
+          if (emp.department === "Sales") {
+            result = true;
+          }
+          return result;
+        }
+      };
+      searchEmps = searchByDepartment(employees, "Sales");
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

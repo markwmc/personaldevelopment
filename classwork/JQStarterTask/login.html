@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- #region Sabio Code - You can Fold this region to remove it from sight -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="referrer" content="unsafe-url" />
+    <meta name="description" content="Sabio Coding Bootcamp" />
+    <meta itemprop="image" content="https://sabio.la/Sabio.png" />
+    <link rel="shortcut icon" href="https://sabio.la/Sabio.png" />
+    <link rel="icon" type="image/png" href="https://sabio.la/Sabio.png" />
+    <!-- Do Not Change the HTML title or anything between this line and the line with the 💘's -->
+    <title>PW Execise Template</title>
+    <link href="https://pw.sabio.la/dist/all-site.css" rel="stylesheet" />
+    <script src="https://pw.sabio.la/api/js/site"></script>
+    <script src="https://unpkg.com/axios@0.19.2/dist/axios.min.js"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script src="JQStarterTasksService.js"></script>
+    <link rel="stylesheet" href="app.css" />
+    <!-- #endregion -->
+    <!-- I 💘 Code, You 💘 Code, We all 💘 Code -->
+
+    <!-- 💡 All your CSS in here -->
+    <style></style>
+  </head>
+
+  <body class="sabio" data-ins="pw-00">
+    <!-- Do Not Edit or Remove this nav element -->
+    <nav
+      class="do-not-remove navbar navbar-expand-md navbar-dark bg-dark sabio d-none"
+    ></nav>
+
+    <div class="container ajax sabio d-none"></div>
+    <nav
+      class="jq-starter-tasks navbar navbar-expand-md navbar-dark bg-dark"
+      aria-label="Fourth navbar example"
+    >
+      <div class="container-fluid">
+        <a href="./register.html"
+          ><button id="navRegister" type="button" class="btn btn-info">
+            Register Here
+          </button></a
+        >
+        <a class="navbar-brand" href="#"></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar"
+          aria-controls="navbar"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbar">
+          <ul class="navbar-nav me-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./friends.html"
+                >Friends</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./techCompanies.html"
+                >Tech Companies</a
+              >
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="./events.html"
+                >Events</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./jobs.html"
+                >Jobs</a
+              >
+            </li>
+          </ul>
+          <form>
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Search"
+              aria-label="Search"
+            />
+          </form>
+        </div>
+      </div>
+    </nav>
+
+    <section class="vh-100">
+      <div class="container-fluid h-custom">
+        <div class="row d-flex justify-content-center align-items-center h-100">
+          <div class="col-md-9 col-lg-6 col-xl-5">
+            <img
+              src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+              class="img-fluid"
+              alt="Sample image"
+            />
+          </div>
+          <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+            <form>
+              <div
+                class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start"
+              >
+                <p class="lead fw-normal mb-0 me-3">Sign in with</p>
+                <button type="button" class="btn btn-primary btn-floating mx-1">
+                  <i class="fab fa-facebook-f"></i>
+                </button>
+
+                <button type="button" class="btn btn-primary btn-floating mx-1">
+                  <i class="fab fa-twitter"></i>
+                </button>
+
+                <button type="button" class="btn btn-primary btn-floating mx-1">
+                  <i class="fab fa-linkedin-in"></i>
+                </button>
+              </div>
+
+              <div class="divider d-flex align-items-center my-4">
+                <p class="text-center fw-bold mx-3 mb-0">Or</p>
+              </div>
+
+              <!-- Email input -->
+              <div class="col-md-6 d-none">
+                <label for="tenantId"><strong>TenantId</strong></label>
+                <input
+                  type="text"
+                  class="form-control"
+                  id="tenantId"
+                  aria-describedby="loginTenantIdHelp"
+                  placeholder="Your TenantId"
+                  name="tenantId"
+                  value="U04K510BV5H"
+                />
+              </div>
+              <div class="form-outline mb-4">
+                <input
+                  type="email"
+                  id="userEmail"
+                  class="form-control form-control-lg"
+                  placeholder="Enter a valid email address"
+                />
+                <label class="form-label" for="form3Example3"
+                  >Email address</label
+                >
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-3">
+                <input
+                  type="password"
+                  id="userPassword"
+                  class="form-control form-control-lg"
+                  placeholder="Enter password"
+                />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+              <div class="d-flex justify-content-between align-items-center">
+                <!-- Checkbox -->
+                <div class="form-check mb-0">
+                  <input
+                    class="form-check-input me-2"
+                    type="checkbox"
+                    value=""
+                    id="rememberUser"
+                  />
+                  <label class="form-check-label" for="form2Example3">
+                    Remember me
+                  </label>
+                </div>
+                <a href="#!" class="text-body">Forgot password?</a>
+              </div>
+
+              <div class="text-center text-lg-start mt-4 pt-2">
+                <a href="./index.html"
+                  ><button
+                    type="button"
+                    class="btn btn-primary btn-lg"
+                    style="padding-left: 2.5rem; padding-right: 2.5rem"
+                    id="loginSubmit"
+                  >
+                    Login
+                  </button></a
+                >
+                <p class="small fw-bold mt-2 pt-1 mb-0">
+                  Don't have an account?
+                  <a href="./register.html" class="link-danger">Register</a>
+                </p>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div
+        class="d-flex flex-column flex-md-row text-center text-md-start justify-content-between py-4 px-4 px-xl-5 bg-primary"
+      >
+        <!-- Copyright -->
+        <div class="text-white mb-3 mb-md-0">
+          Copyright © 2020. All rights reserved.
+        </div>
+        <!-- Copyright -->
+
+        <!-- Right -->
+        <div>
+          <a href="#!" class="text-white me-4">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="#!" class="text-white me-4">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="#!" class="text-white me-4">
+            <i class="fab fa-google"></i>
+          </a>
+          <a href="#!" class="text-white">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+        </div>
+        <!-- Right -->
+      </div>
+    </section>
+    <!-- Do Not Edit or Remove this footer element -->
+    <footer
+      class="do-not-remove container-fluid footer mx-auto fb-targert sabio"
+    >
+      <p class="text-center">© Sabio.la 2019</p>
+    </footer>
+
+    <!--👇🏻 All your JavaScript code goes below here inside this script tag 👇🏻 -->
+    <script id="candidateCode">
+      function startUp() {
+        console.log("login startUp is firing...");
+        wireUpHandlers();
+      }
+
+      function wireUpHandlers() {
+        $("#loginSubmit").on("click", onLoginSubmitClicked);
+        $("#navRegister").on("click", onNavRegisterClicked);
+      }
+      function onNavRegisterClicked(e) {
+        e.preventDefault();
+        console.log("onNavRegisterClicked is firing...");
+      }
+      function onLoginSubmitClicked(e) {
+        e.preventDefault();
+        console.log("onLoginSubmitClicked is firing...");
+        var loginFormData = getFormData();
+        if (!loginFormData) {
+          return;
+        }
+        JQStarterTasksService.loginUser(loginFormData)
+          .then(onUserLoginSuccess)
+          .catch(onUserLoginError);
+      }
+
+      function getFormData() {
+        console.log("getFormData is firing...");
+        var data = {};
+        data.email = $("#userEmail").val();
+        data.password = $("#userPassword").val();
+        // data.rememberMe = $("#rememberUser");
+        data.tenantId = $("#tenantId").val();
+        return data;
+      }
+
+      function writeFormData(formData) {
+        console.log("writeFormData is firing...");
+        if (!formData) {
+          return;
+        }
+        $("#userEmail").val(formData.email);
+        $("#userPassword").val(formData.password);
+        $("#rememberUser").val(formData.rememberMe);
+        $("#tenantId").val(formData.tenantId);
+      }
+      onUserLoginSuccess = (response) => {
+        console.log(response, "onUserLoginSuccess");
+
+        $("#btnReset").click();
+        window.location.href = "./index.html";
+        toastr.info("Login Successful");
+      };
+      onUserLoginError = (response) => {
+        console.error(response, "onUserLoginError");
+        toastr.warning("login error");
+      };
+    </script>
+    <!-- 🛑 Do Not Write Any Code Below here -->
+  </body>
+</html>

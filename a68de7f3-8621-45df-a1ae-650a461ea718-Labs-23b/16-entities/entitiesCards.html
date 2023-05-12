@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container teams">
+      <div class="row"></div>
+    </div>
+    <div type="text/template" id="template">
+      <div class="card" style="width: 18rem">
+        <img class="card-img-top" src="..." alt="Card image cap" />
+        <div class="card-body">
+          <h5 class="card-title"></h5>
+
+          <p class="card-text">insert Teams Card here</p>
+          <p class="card-text-second"></p>
+        </div>
+      </div>
+    </div>
+    <script>
+      function getTemplate() {
+        console.log("getTemplate is firing...");
+        let template = $("#template").html();
+        jQ = $(template).clone();
+        return jQ;
+      }
+
+      renderTeams = (teams) => {
+        console.log("renderTeams is firing...");
+        let container = $(".container.teams .row");
+        for (let index = 0; index < teams.length; index++) {
+          const currentTeam = team[index];
+          console.log(currentTeam, "CurrentTeam");
+
+          let newTemplate = getTemplate();
+          newTemplate
+            .find(".card-img-top")
+            .attr("src", currentTeam.picture.large);
+          newTemplate.find(".card-text").text(currentTeam.name.value);
+          newTemplate.find(".card-title").text(`${currentTeam.name.title}`);
+          newTemplate
+            .find(".card-text-second")
+            .text(`${currentTeam.city} ${currentTeam.Sport}`);
+          container.append(newTemplate);
+        }
+      };
+    </script>
+  </body>
+</html>
